@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import Pricing from "./components/Pricing";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const freePrice = {
+        type: "Free",
+        price: 0,
+        paragraph:
+            "Have a try at the world's most powerful & user friendly pos software available now",
+        benefits: [
+            "Unlimited listings",
+            "Simple Analytics",
+            "1 Account",
+            "Branded with Roman",
+        ],
+    };
+    return (
+        <div className="App">
+            <header>
+                <Navbar></Navbar>
+            </header>
+            <div className="pricing-blocks">
+                <Pricing {...freePrice} />
+                <Pricing {...freePrice} />
+                <Pricing {...freePrice} />
+
+
+            </div>
+        </div>
+    );
 }
 
 export default App;
